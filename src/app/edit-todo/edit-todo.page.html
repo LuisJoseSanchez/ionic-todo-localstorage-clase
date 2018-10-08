@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button href="/home">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="floating">Título</ion-label>
+    <ion-input clearInput [(ngModel)]="todo.title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <ion-input clearInput [(ngModel)]="todo.description"></ion-input>
+  </ion-item>
+
+  <ion-button
+    (click)="saveTodo(todo)"
+    color="light"
+    expand="full">
+    Guardar
+  </ion-button>
+</ion-content>
