@@ -17,7 +17,11 @@ export class TodoService {
 
   getTodos(): Promise<Todo[]> {
     this.storage.get('todoCounter').then(
-      data => this.todoCounter
+      data => {
+        if (data) {
+          this.todoCounter = data;
+        }
+      }
     );
 
     return this.storage.get('todos').then(
